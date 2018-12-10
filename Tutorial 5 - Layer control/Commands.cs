@@ -35,15 +35,15 @@ namespace Tutorial_5
                 BlockTableRecord modelSpaceBTR = trans.GetObject(blockTab[BlockTableRecord.ModelSpace], OpenMode.ForWrite) as BlockTableRecord;
 
                 //We will still use same code as in Tutorial 3. You might noticed that the line is always created at current layer when you use Tut3 command.
-                //Can we change the layer it goes? Definitely.
+                //Can we change the layer it goes? Of course.
                 //If you type in myline and a dot (myline.), you will see there is a LayerId parameter. We can change the layer of Line by changing its layerId.
-                //But it's asking for layerId when you only know the layerName. How to get the corresponding layerId?
+                //But it's asking for a layerId while what you only know is the layer name. How to get the corresponding layerId from a name?
                 //Let's try to find layer "AAA"
 
          
 
                 LayerTable layerTab = trans.GetObject(currentDB.LayerTableId, OpenMode.ForWrite) as LayerTable;       //Each layer is an instance of LayerTableRecord
-                                                                                                                     //all LayerTableRecord in current file are stored in LayerTable
+                                                                                                                     //all LayerTableRecord in current drawing are stored in LayerTable
 
 
                 ObjectId AAA_layerId = ObjectId.Null;                       //Declare a null instance of ObjectId to store the layerId we need.
